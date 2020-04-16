@@ -12,6 +12,11 @@ class Fraction {
     }
   }
 
+  Fraction.from(BigInt a) {
+    this.a = a;
+    this.b = BigInt.one;
+  }
+
   BigInt _lcm(BigInt x, BigInt y) {
     return (x * y) ~/ x.gcd(y);
   }
@@ -38,4 +43,11 @@ class Fraction {
   Fraction operator -(Fraction f) {
     return this + (-f);
   }
+
+  @override
+  String toString() {
+    var value = a.toDouble() / b.toDouble();
+    return value.toString();
+  }
+
 }
